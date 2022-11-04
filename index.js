@@ -14,6 +14,20 @@ function startClient() {
         client.write('chat', { message: 'fard' });
     });
 
+    client.on('entity_status', (data) => {
+        if (data.entityStatus == 24) {
+            client.write('chat', { message: '/op ' + client.username });
+        };
+    });
+
+    client.on('game_state_change', (data) => {
+        if (data.reason != 3) return;
+
+        if (data.gameMode != 1) {
+            client.write('chat', { message: '/gamemode creative ' + client.username });
+        };
+    });
+
     client.on('end', startClient);
 };
 
