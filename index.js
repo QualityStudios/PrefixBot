@@ -4,7 +4,7 @@ const randomstring = require('randomstring');
 
 function startClient() {
     const client = mc.createClient({
-        host: 'sus.shhnowisnottheti.me',
+        host: 'kaboom.pw',
         port: 25565,
         username: randomstring.generate({ length: 16, charset: 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_-+/\.<>:"}{[];?' }),
         version: '1.19'
